@@ -20,7 +20,7 @@ export default function PricingCard({title,price,desc,featuresList,notFeaturesLi
         )
     }
     return (
-        <div className='bg-[#F1FAFA] rounded-2xl flex flex-col border border-[#47BEB9] border-opacity-50  py-2 px-10 md:w-80 w-full min-h-[650px] max-w-80 scale-95'>
+        <div className='bg-[#F1FAFA] rounded-2xl flex flex-col border border-[#47BEB9] border-opacity-50  py-2 px-10 md:w-80 w-full min-h-[650px] max-w-96 scale-95'>
         <br />
         <br />
 

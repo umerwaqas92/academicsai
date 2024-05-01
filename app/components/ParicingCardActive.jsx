@@ -21,7 +21,7 @@ export default function PricingCardActive({title,price,desc,featuresList,notFeat
         )
     }
     return (
-        <div className='bg-white rounded-2xl flex flex-col  border-4 border-[#47BEB9]  py-2 px-10 md:w-80 w-full min-h-[650px] max-w-80 scale-95'>
+        <div className='bg-white rounded-2xl flex flex-col  border-4 border-[#47BEB9]  py-2 px-10 md:w-80 w-full min-h-[650px] max-w-96 scale-95'>
 
 <div className=' w-full flex justify-end'>
 
