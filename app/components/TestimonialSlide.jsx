@@ -10,6 +10,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { FaArrowAltCircleRight } from "react-icons/fa";
 import { FaArrowAltCircleLeft } from "react-icons/fa";
 import ReviewTweetItem from "./TestimonialItem";
+import ScrollAnimation from "./AnimationHelper";
 
 
 
@@ -88,13 +89,21 @@ export default function SimpleSlider2() {
    <div className=" w-full pb-20   px-14  lg:px-32    xl:px-52 bg-[#252835] ">
      <div className="slider-containe  bg-[#252835]  gap-1 " >
       <Slider {...settings}>
+    <ScrollAnimation>
     <ReviewTweetItem  name={"Tom"} username={"@Tom"} tweet={"I love this app. I can't stop using it. It's so easy to use. I love the way it works. Thank you!"} hashtag={"#AI"} profilepic={"https://placehold.co/400"} />
-    <ReviewTweetItem  name={"Tom"} username={"@Tom"} tweet={"I love this app. I can't stop using it. It's so easy to use. I love the way it works. Thank you!"} hashtag={"#AI"} profilepic={"https://placehold.co/400"} />
-    <ReviewTweetItem  name={"Tom"} username={"@Tom"} tweet={"I love this app. I can't stop using it. It's so easy to use. I love the way it works. Thank you!"} hashtag={"#AI"} profilepic={"https://placehold.co/400"} />
-    <ReviewTweetItem  name={"Tom"} username={"@Tom"} tweet={"I love this app. I can't stop using it. It's so easy to use. I love the way it works. Thank you!"} hashtag={"#AI"} profilepic={"https://placehold.co/400"} />
-    <ReviewTweetItem  name={"Tom"} username={"@Tom"} tweet={"I love this app. I can't stop using it. It's so easy to use. I love the way it works. Thank you!"} hashtag={"#AI"} profilepic={"https://placehold.co/400"} />
-    <ReviewTweetItem  name={"Tom"} username={"@Tom"} tweet={"I love this app. I can't stop using it. It's so easy to use. I love the way it works. Thank you!"} hashtag={"#AI"} profilepic={"https://placehold.co/400"} />
+    </ScrollAnimation>
 
+    <ScrollAnimation>
+    <ReviewTweetItem  name={"Tom"} username={"@Tom"} tweet={"I love this app. I can't stop using it. It's so easy to use. I love the way it works. Thank you!"} hashtag={"#AI"} profilepic={"https://placehold.co/400"} />
+    </ScrollAnimation>   <ScrollAnimation>
+    <ReviewTweetItem  name={"Tom"} username={"@Tom"} tweet={"I love this app. I can't stop using it. It's so easy to use. I love the way it works. Thank you!"} hashtag={"#AI"} profilepic={"https://placehold.co/400"} />
+    </ScrollAnimation>   <ScrollAnimation>
+    <ReviewTweetItem  name={"Tom"} username={"@Tom"} tweet={"I love this app. I can't stop using it. It's so easy to use. I love the way it works. Thank you!"} hashtag={"#AI"} profilepic={"https://placehold.co/400"} />
+    </ScrollAnimation>
+    <ScrollAnimation>
+    <ReviewTweetItem  name={"Tom"} username={"@Tom"} tweet={"I love this app. I can't stop using it. It's so easy to use. I love the way it works. Thank you!"} hashtag={"#AI"} profilepic={"https://placehold.co/400"} />
+    </ScrollAnimation>
+    
       </Slider>
     </div>
    </div>
