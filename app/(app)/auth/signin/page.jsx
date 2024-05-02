@@ -8,10 +8,10 @@ export default function page() {
 
   console.log(session)
   return (
-    <div className='flex items-center justify-center  w-full md:pr-10'>
+    <div className='flex items-center justify-center  w-full md:pr-10 '>
 
-    <div className=' flex md:flex-row flex-col  gap-2 md:mt-16  mt-10   justify-center items-center '>
-      <img src='/images/Illustration.png' className=' md:w-1/2 w-full scale-75  md:scale-95 lg:pr-32 ' />
+    <div className=' flex md:flex-row flex-col  gap-2 md:mt-16    justify-center items-center '>
+      <img src='/images/Illustration.png' className=' md:w-1/2 w-1/2   md:scale-95 lg:pr-32 mb-20 md:mb-0' />
       
       <div className='container flex flex-col  space-y-2 w-full md:min-w-[450px] lg:min-w-[500px]'>
 
