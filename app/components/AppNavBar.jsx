@@ -10,7 +10,7 @@ export default function AppNavBar() {
     <div className="fixed top-0 right-0 w-full navbar  z-20 bg-white ">
   <div className="flex-1">
     <a className="btn btn-ghost text-xl">
-    <img src="/images/academics.ai.png" alt="logo" className=' w-40 object-scale-down' />
+    <img src="/images/academics.ai.png" alt="logo" className=' w-40 object-scale-down' loading="eager" />
 
     </a>
   </div>

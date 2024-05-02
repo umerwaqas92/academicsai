@@ -11,7 +11,7 @@ export default function page() {
     <div className='flex items-center justify-center  w-full md:pr-10 z-0'>
 
     <div className=' flex md:flex-row flex-col  gap-2     justify-center items-start  '>
-      <img src='/images/Illustration.png' className=' md:w-1/2 w-full scale-75  md:scale-95 lg:pr-32 hidden md:block ' />
+      <img src='/images/Illustration.png' className=' md:w-1/2 w-full scale-75  md:scale-95 lg:pr-32 hidden md:block ' loading="eager" />
       
       <div className='container flex flex-col  space-y-2 w-full md:min-w-[450px] lg:min-w-[500px] '>
        <div className='flex flex-row items-center justify-between'>
