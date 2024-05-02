@@ -28,7 +28,7 @@ export default function page() {
 
         <input className='input input-bordered w-full  ' type="text" placeholder='Password' />
         <button className='btn btn-primary w-full mt-5 rounded-full' onClick={() => {
-          
+
         }}>Sign In</button>
 <br />
         <div className="divider  ">OR</div>
@@ -39,6 +39,11 @@ export default function page() {
 
 
       </div>
+
+      <br />
+      <br />
+      <br />
+
       
        
 

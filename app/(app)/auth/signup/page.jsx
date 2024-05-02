@@ -11,14 +11,14 @@ export default function page() {
     <div className='flex items-center justify-center  w-full md:pr-10 z-0'>
 
     <div className=' flex md:flex-row flex-col  gap-2     justify-center items-start  '>
-      <img src='/images/Illustration.png' className=' md:w-1/2 w-full scale-75  md:scale-95 lg:pr-32 ' />
+      <img src='/images/Illustration.png' className=' md:w-1/2 w-full scale-75  md:scale-95 lg:pr-32 hidden md:block ' />
       
       <div className='container flex flex-col  space-y-2 w-full md:min-w-[450px] lg:min-w-[500px] '>
        <div className='flex flex-row items-center justify-between'>
-       <h1 className='text-3xl font-bold *:'>Create Account</h1>
+       <h1 className='text-3xl font-bold *:'>Signup</h1>
        <Link href={"/auth/signin"} className='link '>Signin instead</Link>
        </div>
-        {/* <p className='text-lg'>Enter your email and password</p> */}
+        <p className='text-lg'>Enter your details</p>
         {/* first name,last name, */}
 
         <p className='text-sm text-gray-500'>First Name</p>
