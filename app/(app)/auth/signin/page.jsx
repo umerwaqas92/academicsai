@@ -22,18 +22,18 @@ export default function page() {
         <p className='text-lg'>Enter your email and password</p>
         {/* lable */}
         <p className='text-sm text-gray-500'>Email</p>
-        <input className='input input-bordered w-full  ' type="text" placeholder='Email' />
+        <input className='input input-md input-bordered w-full  ' type="text" placeholder='Email' />
         <p className='text-sm text-gray-500'>Password</p>
  
 
-        <input className='input input-bordered w-full  ' type="text" placeholder='Password' />
-        <button className='btn btn-primary w-full mt-5 rounded-full' onClick={() => {
+        <input className='input input-md input-bordered w-full  ' type="text" placeholder='Password' />
+        <button className='btn btn-md btn-primary w-full mt-5 rounded-full' onClick={() => {
 
         }}>Sign In</button>
 <br />
         <div className="divider  ">OR</div>
 <br />
-<button className='btn btn-ghost w-full mt-5 rounded-full bg-white border-black ' onClick={() => signIn("google")}>
+<button className='btn btn-md btn-ghost w-full mt-5 rounded-full bg-white border-black ' onClick={() => signIn("google")}>
   <img src='/svg/googleicon.svg'/>
   Continue with Google</button>
 
