@@ -2,12 +2,16 @@
 import React from 'react'
 import Logo from './Logo'
 import { signOut ,useSession} from 'next-auth/react'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 export default function AppNavBar() {
   const { data: session, status } = useSession()
+
+const pathname = usePathname();
     
   return (
-    <div className="fixed top-0 right-0 w-full navbar  z-20 bg-white ">
+    <div className="fixed top-0 right-0 w-full navbar  z-20 bg-white border-b border-gray-200 ">
   <div className="flex-1">
     <a className="btn btn-ghost text-xl">
     <img src="/images/academics.ai.png" alt="logo" className=' w-40 object-scale-down' loading="eager" />
@@ -28,6 +32,11 @@ export default function AppNavBar() {
           </ul>
         </details>
       </li> */}
+
+      {/* {
+        status === "unauthenticated" ?       <Link href={"/auth/signin"}  className="btn btn-ghost btn-md">Login</Link>:null
+      } */}
+       <Link href={"/auth/signin"}  className="btn btn-md btn-ghost ">Login</Link>
       {
         status === "authenticated" ?       <button onClick={() => signOut()} className="btn btn-ghost btn-md">Logout</button>:null
       }

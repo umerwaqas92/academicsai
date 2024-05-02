@@ -10,7 +10,7 @@ export default function RootLayout({ children }) {
 <>
 <AppNavBar />
 
-<div className=" md:px-20 px-6 mt-20 ">
+<div className=" md:px-20 px-6 mt-28 ">
 
 {children}
 </div>
