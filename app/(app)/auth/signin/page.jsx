@@ -1,18 +1,76 @@
 "use client";
 import SocialLoginButtons from '@/app/components/SocialLoginButtons';
 import { useAuth } from '@/app/context/AuthContext';
+import { RevalidatePage } from '@/libs/revalidateHelper';
 import { signIn, useSession ,signOut} from 'next-auth/react'
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import React from 'react'
+import React, { useState } from 'react'
+import { toast } from 'sonner';
 
 export default function page() {
-  const { user,isLogin } = useAuth();
+  const { user,logIn,isLogin } = useAuth();
 
   const router = useRouter();
-  if(isLogin){
-    router.push('/app')
-  }
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);
+
+
+  // useEffect(() => {
+  //   if (isLogin) {
+  //     router.push('/app');
+  //   }
+  
+  // }, [isLogin]);
+
+  
+  const handleSubmit = async () => {
+    // e.preventDefault();
+    try {
+
+      if (!email || !password) return;
+
+      setLoading(true);
+
+      
+      const _email = email.trim();
+      const _password = password.trim();
+      const user=  await logIn(_email, _password);
+      console.log('user',user);
+      // router.push('/app');
+      RevalidatePage({
+        path:"/app"
+      }
+        
+      );
+
+      // if(user){
+      //   // RedirectTo( '/app');
+
+      //   router.push('/app');
+      // }{
+
+      //   toast.error('Invalid email or password');
+      //   setLoading(false);
+      // }
+
+     
+    } catch (error) {
+      console.log(error);
+      setLoading(false);
+      toast.error(error.message.replace('Firebase: ', ''));
+
+    }
+  };
+
+
+
+  const validateForm = () => {
+    return (email && password) && (password.trim() !== '');
+  };
+  
   
 
 
@@ -32,14 +90,20 @@ export default function page() {
         <p className='text-lg'>Enter your email and password</p>
         {/* lable */}
         <p className='text-sm text-gray-500'>Email</p>
-        <input className='input input-md input-bordered w-full  ' type="text" placeholder='Email' />
+        <input disabled={loading} value={email} onChange={(e) => setEmail(e.target.value)} className='input input-md input-bordered w-full  ' type="email" placeholder='Email'  required/>
         <p className='text-sm text-gray-500'>Password</p>
  
 
-        <input className='input input-md input-bordered w-full  ' type="text" placeholder='Password' />
-        <button className='btn btn-md btn-primary w-full mt-5 rounded-full' onClick={() => {
+        <input disabled={loading} value={password} onChange={(e) => setPassword(e.target.value)} className='input input-md input-bordered w-full  ' type="password" placeholder='Password' required />
+        <button
 
-        }}>Sign In</button>
+          disabled={!validateForm() || loading}
+        
+        onClick={handleSubmit}
+        className='btn btn-md btn-primary w-full mt-5 rounded-full' >
+         {loading&&  <span className='loading loading-spinner'></span>}
+          
+          Sign In</button>
 <br />
         <div className="divider  ">OR</div>
 <br />
