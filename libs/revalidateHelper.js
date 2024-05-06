@@ -6,7 +6,7 @@ import { redirect } from "next/navigation";
 
 
 export async function RevalidatePage({path}) {
-    revalidatePath(path, 'page')
+    await revalidatePath(path, 'page')
     redirect(path) 
 }
 

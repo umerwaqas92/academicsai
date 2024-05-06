@@ -3,7 +3,8 @@ import { AddorUpdateProfileData, LoginWithGithub, LoginWithGoogle } from '@/libs
 import React ,{useEffect, useState}from 'react'
 import { useRouter } from 'next/navigation';
 import {  toast } from 'sonner';
-import { revalidatePath } from 'next/cache';
+import { RevalidatePage } from '@/libs/revalidateHelper';
+
 
 export default function SocialLoginButtons() {
 
@@ -18,7 +19,7 @@ export default function SocialLoginButtons() {
     const handleGoogleLogin = async () => {
         try {
           setLoading(true);
-          revalidatePath('/auth/signin');
+          
           
          
           await LoginWithGoogle(
@@ -34,7 +35,9 @@ export default function SocialLoginButtons() {
               photoFIle: user.photoURL
             });
 
-            router.push('/app');
+            await RevalidatePage({path:"/app"})
+
+            // router.push('/app');
           }
           ,
 
