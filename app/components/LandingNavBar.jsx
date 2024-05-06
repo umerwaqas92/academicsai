@@ -56,7 +56,7 @@ export default function LandingNavBar() {
         </ul>
       </div>
    <div className='   flex-row gap-2 hidden md:block'>
-   <Link href={"#"} className="btn btn-ghost rounded-full ">Login</Link>
+   <Link href={"/app"} className="btn btn-ghost rounded-full ">Login</Link>
     <LandingActionButton />
    </div>
     </div>

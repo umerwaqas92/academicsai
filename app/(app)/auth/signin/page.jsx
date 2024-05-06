@@ -1,12 +1,22 @@
 "use client";
+import SocialLoginButtons from '@/app/components/SocialLoginButtons';
+import { useAuth } from '@/app/context/AuthContext';
 import { signIn, useSession ,signOut} from 'next-auth/react'
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import React from 'react'
 
 export default function page() {
-  const { data: session, status } = useSession()
+  const { user,isLogin } = useAuth();
 
-  console.log(session)
+  const router = useRouter();
+  if(isLogin){
+    router.push('/app')
+  }
+  
+
+
+  // console.log(session)
   return (
     <div className='flex items-center justify-center  w-full md:pr-10 '>
 
@@ -33,9 +43,7 @@ export default function page() {
 <br />
         <div className="divider  ">OR</div>
 <br />
-<button className='btn btn-md btn-ghost w-full mt-5 rounded-full bg-white border-black ' onClick={() => signIn("google")}>
-  <img src='/svg/googleicon.svg'/>
-  Continue with Google</button>
+<SocialLoginButtons />
 
 
       </div>

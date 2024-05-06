@@ -1,14 +1,20 @@
 "use client"
 import React from 'react'
 import Logo from './Logo'
-import { signOut ,useSession} from 'next-auth/react'
+
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { useAuth } from '../context/AuthContext'
+import LogoutBtn from './LogoutBtn'
 
 export default function AppNavBar() {
-  const { data: session, status } = useSession()
+  // const { data: session, status } = useSession()
+    const { user,isLogin,signOut } = useAuth();
+// 
 
 const pathname = usePathname();
+
+// "loading" | "authenticated" | "unauthenticated"
     
   return (
     <div className="fixed top-0 right-0 w-full navbar  z-20 bg-white border-b border-gray-200 ">
@@ -36,10 +42,11 @@ const pathname = usePathname();
       {/* {
         status === "unauthenticated" ?       <Link href={"/auth/signin"}  className="btn btn-ghost btn-md">Login</Link>:null
       } */}
-       <Link href={"/auth/signin"}  className="btn btn-md btn-ghost ">Login</Link>
+
       {
-        status === "authenticated" ?       <button onClick={() => signOut()} className="btn btn-ghost btn-md">Logout</button>:null
+        !isLogin ?           <Link href={"/auth/signin"}  className="btn btn-md btn-ghost ">Login</Link>:   <LogoutBtn />
       }
+     
     </ul>
   </div>
 </div>

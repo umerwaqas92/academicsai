@@ -69,3 +69,25 @@ export const PricingList=[
         }
 
     ]
+
+
+
+
+export const appLinks=[
+   { title:"Chat",
+    link:"/app",
+    icon:"/svg/chat_icon.svg"
+    },
+    {
+        title:"Template",
+        link:"/app/template",
+        icon:"/svg/project_icon.svg",
+    },{
+        title:"Project",
+        link:"/app/project",
+        icon:"/svg/project_icon.svg"
+
+    }
+
+
+]

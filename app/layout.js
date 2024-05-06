@@ -3,6 +3,8 @@ import "./globals.css";
 import { getServerSession } from "next-auth";
 
 import SessionProvider from "./SessionProvider";
+import { AuthContextProvider } from "./context/AuthContext";
+import { Toaster } from "sonner";
 
 
 
@@ -14,17 +16,22 @@ export const metadata = {
 };
 
 export default async function RootLayout({ children }) {
-  const session = await getServerSession();
+
 
   return (
     
     <html data-theme="mytheme" lang="en">
-            <SessionProvider session={session}>
+            
        
       
 
-      <body className={inter.className}>{children}</body>
-      </SessionProvider>
+      <body className={inter.className}>
+      <AuthContextProvider>
+        {children}
+        </AuthContextProvider>
+        </body>
+      <Toaster/>
+
     </html>
   );
 }
